@@ -3,15 +3,16 @@ body {
   padding: 0%;
   font-family: sans-serif;
   background-color: #f2f2f2;
+  font-family: 'Alata', sans-serif;
 }
 main{
-  margin-left:10em;
+  margin-left:9.5em;
 }
 .navigation{
   position: fixed;
   display: grid;
   background-color: #F2E18D;
-  padding: 5em 3em 100vh 0.5em;
+  padding: 5em 4em 100vh 1em;
 }
 .navigation a{
   margin : 0.4em;
@@ -27,7 +28,7 @@ h1, h2 {
 h1{
   font-size: 2em;
   margin:0;
-  padding: 0%;
+  padding: 1em 0 0 0;
 }
 h2{
   font-size: 0.7em;
@@ -38,26 +39,29 @@ h1 span{
   font-size: 2em;
 }
 .button-title{
+  width:88vw;
   border-bottom: 0.2em solid #F2CB05;
   font-size: 1.3em;
   font-weight: bold;
   color : #707070;
-  margin :0.2em;
+  margin :0.2em 0.2em 0.2em 0.6em;
 }
 #buttons{
-  margin: 0 0 2em 0;
+  margin: 0.5em 0;
+  text-align: center;
 }
 .button-div{
   display: inline-block;
   background-color: #dfdfdf;
   margin: 0.1em;
-  padding: 0.5em;
+  width:13em;
+  height:4em;
+  position: relative
 }
 .button-div:hover{
   display: inline-block;
   background-color:#f2d857;
-  margin: 0.1em;
-  padding: 0.5em;
+  margin:0.1em;
 }
 .studio-button{
   font-size: 0.8em;
@@ -65,7 +69,13 @@ h1 span{
   color : #707070;
   display: inline-block;
   margin :0.2em;
+  padding:2em;
   text-decoration: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
 }
 .studio-title {
   color : #707070;
@@ -92,8 +102,17 @@ h1 span{
   display: inline-block;
   background-color: #707070;
   color : #f2d857;
-  padding: 1em 2em;
-  font-size: 1em;
+  padding: 0.8em 1.5em;
+  font-size: 0.9em;
+  font-weight: bold;
+  margin: 2em 0;
+}
+.read-more:hover{
+  display: inline-block;
+  background-color:#f2d857;
+  color :#707070;
+  padding: 0.8em 1.5em;
+  font-size: 0.9em;
   font-weight: bold;
   margin: 2em 0;
 }
@@ -105,4 +124,7 @@ h1 span{
 .studio-div{
   margin: 0.2em 0;
   display: flex;
+}
+#studios {
+  margin-left: 0.9em;
 }
