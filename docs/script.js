@@ -5,6 +5,7 @@ const endpoint = `${uri}?id=${id}&sheet=${sheet}`;
 
 const renderJson = (json) => {
   const studios = json.records;
+  studios.pop();
   
   studios.forEach(studio => {
 
