@@ -1,130 +1,17 @@
-body {
-  margin:0;
-  padding: 0%;
-  font-family: sans-serif;
-  background-color: #f2f2f2;
-  font-family: 'Alata', sans-serif;
+body{
+    background-color: rgb(70, 202, 255);
+    overscroll-behavior:none;
+    height: 50000px;
 }
-main{
-  margin-left:9.5em;
-}
-.navigation{
-  position: fixed;
-  display: grid;
-  background-color: #F2E18D;
-  padding: 5em 4em 100vh 1em;
-}
-.navigation a{
-  margin : 0.4em;
-  font-size: 1.2em;
-  font-weight: bold;
-  color : #707070;
-}
-h1, h2 {
-  font-weight: bold;
-  color : #707070;
-  text-align: center;
+canvas {
+    position: fixed;
 }
 h1{
-  font-size: 2em;
-  margin:0;
-  padding: 1em 0 0 0;
-}
-h2{
-  font-size: 0.7em;
-  margin:0;
-  padding: 0%;
-}
-h1 span{
-  font-size: 2em;
-}
-.button-title{
-  width:88vw;
-  border-bottom: 0.2em solid #F2CB05;
-  font-size: 1.3em;
-  font-weight: bold;
-  color : #707070;
-  margin :0.2em 0.2em 0.2em 0.6em;
-}
-#buttons{
-  margin: 0.5em 0;
-  text-align: center;
-}
-.button-div{
-  display: inline-block;
-  background-color: #dfdfdf;
-  margin: 0.1em;
-  width:13em;
-  height:4em;
-  position: relative
-}
-.button-div:hover{
-  display: inline-block;
-  background-color:#f2d857;
-  margin:0.1em;
-}
-.studio-button{
-  font-size: 0.8em;
-  font-weight: bold;
-  color : #707070;
-  display: inline-block;
-  margin :0.2em;
-  padding:2em;
-  text-decoration: none;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%)
-}
-.studio-title {
-  color : #707070;
-  font-weight: bold;
-  font-size: 1.3em;
-}
-.kind-of-core {
-  color : #707070;
-  font-weight: bold;
-  margin: 0.5em 0;
-}
-.studio-div-two{
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-}
-.studio-div-three{
-  margin : auto 0;
-  margin-left:4rem;
-  width:50vw;
-  
-}
-.read-more{
-  display: inline-block;
-  background-color: #707070;
-  color : #f2d857;
-  padding: 0.8em 1.5em;
-  font-size: 0.9em;
-  font-weight: bold;
-  margin: 2em 0;
-}
-.read-more:hover{
-  display: inline-block;
-  background-color:#f2d857;
-  color :#707070;
-  padding: 0.8em 1.5em;
-  font-size: 0.9em;
-  font-weight: bold;
-  margin: 2em 0;
-}
-.studio-image{
-  width:35vw;
-  height:25vw;
-  object-fit: cover;
-}
-.studio-div{
-  margin: 0.2em 0;
-  display: flex;
-}
-#studios {
-  margin-left: 0.9em;
+    font-family: 'Kiwi Maru', serif;
+    color:#fff;
+    font-size: 50px;
+    position:fixed;
+    z-index: 10;
+    text-align: center;
+    width: 100%;
 }
