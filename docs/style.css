@@ -1,7 +1,7 @@
 body{
     background-color: rgb(70, 202, 255);
     overscroll-behavior:none;
-    height: 50000px;
+    height: 100000px;
 }
 canvas {
     position: fixed;
