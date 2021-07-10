@@ -20,10 +20,16 @@ let v = 0;
 let g = 300;
 let bounce_count = 0;
 let bounce_count2 = 0;
+let bounce_kind = 0;
+let bounce_low = -3000;
+let bounce_high = -6000;
 
 function setup() {
   createCanvas(width,height);
   frameRate(30);
+  console.log(v);
+  console.log($(window).scrollTop());
+  console.log("1");
 }
 window.onload = function() {
   $(function(){
@@ -31,11 +37,18 @@ window.onload = function() {
     });
   //window.scrollTo(0,scroll_y);
   a_switch = true;
+  console.log(v);
+  console.log($(window).scrollTop());
+  console.log("2");
 };
 
 function draw() {
+  console.log(bounce_kind);
   now_scroll = $(window).scrollTop();
   a = -$(window).scrollTop() * 0.001 + 60; //初期角度0
+  console.log(v);
+  console.log($(window).scrollTop());
+  console.log("3");
   if(a_switch == true){
     $(function(){
       　 $(window).scrollTop(scroll_y);
@@ -44,15 +57,21 @@ function draw() {
     v += g;
     console.log(v);
     console.log($(window).scrollTop());
+    console.log("4");
     if($(window).scrollTop() > 99000){
       bounce_count ++;
       a_switch = false;
       a_switch2 = true;
       v = -4000;
+      console.log(v);
+      console.log($(window).scrollTop());
+      console.log("5");
     }
   }
   if(a_switch2 == true){
+    console.log(v);
     console.log($(window).scrollTop());
+    console.log("6");
     $(function(){
       　 $(window).scrollTop(scroll_y);
       });
@@ -60,17 +79,31 @@ function draw() {
     v += g;
     if($(window).scrollTop() < 78000 && bounce_count == 1){
       bounce_count ++;
+      console.log(v);
+      console.log($(window).scrollTop());
+      console.log("7");
     }
     if($(window).scrollTop() > 99000 && bounce_count==2){
-      console.log($(window).scrollTop());
       a_switch2 = false;
       a_switch3 = true;
       v = 0;
+      console.log(v);
+      console.log($(window).scrollTop());
+      console.log("8");
     }
   }
   if(a_switch3 == true){
-    if(scroll_stop == false){
+    console.log(v);
+    console.log($(window).scrollTop());
+    console.log("8");
+    if(scroll_stop == false){ //スクロールしている時
+      if($(window).scrollTop() < 1000){
+        bounce_kind = 1;
+      }
       if(now_scroll == last_scroll){ // スクロールをやめたら
+        console.log(v);
+        console.log($(window).scrollTop());
+        console.log("9");
         s_time = new Date();
         scroll_stop = true;
       }
@@ -78,21 +111,34 @@ function draw() {
     if(scroll_stop == true){
       if(now_scroll == last_scroll){
         e_time = new Date();
+        console.log(v);
+        console.log($(window).scrollTop());
+        console.log("10");
         if((e_time.getTime() - s_time.getTime()) > 3){
           scroll_y = $(window).scrollTop();
+          console.log(v);
+          console.log($(window).scrollTop());
+          console.log("11");
           if($(window).scrollTop() > 99000){
             down = false;
+            console.log(v);
+            console.log($(window).scrollTop());
+            console.log("12");
           }
           else{
-            console.log(v);
             down = true;
-            console.log(down);
             scroll_stop = false;
+            console.log(v);
+            console.log($(window).scrollTop());
+            console.log("13");
           }
         }
       }
       else if(now_scroll != last_scroll){
-        scroll_stop = false;
+          scroll_stop = false;
+          console.log(v);
+          console.log($(window).scrollTop());
+          console.log("14");
       }
     }
 
@@ -102,32 +148,49 @@ function draw() {
       $(function(){
         　 $(window).scrollTop(scroll_y);
         });//scroll_yの位置にスクロールバーがくる
-      console.log(v);
-      console.log($(window).scrollTop());
+        console.log(v);
+        console.log($(window).scrollTop());
+        console.log(scroll_y);
+        console.log("ダウンしてる時");
       if($(window).scrollTop() > 99000){
         bounce_count2 ++;
-        v = -2000;
+        if(bounce_kind == 0){
+          v = bounce_low;
+        }
+        else{
+          v = bounce_high;
+        }
         down = false;
         up = true;
         console.log(v);
         console.log($(window).scrollTop());
+        console.log("16");
       }
     }
     if(up == true){
-      console.log($(window).scrollTop());
       $(function(){
         　 $(window).scrollTop(scroll_y);
         });
       scroll_y +=v;
       v += g;
+      console.log(v);
+      console.log($(window).scrollTop());
+      console.log(scroll_y);
+      console.log("17");
       if($(window).scrollTop() < 95900 && bounce_count2 == 1){
         bounce_count2 ++;
+        console.log(v);
+        console.log($(window).scrollTop());
+        console.log("18");
       }
       if($(window).scrollTop() > 99000 && bounce_count2==2){
-        console.log($(window).scrollTop());
         up = false;
         v = 0;
         bounce_count2 = 0;
+        bounce_kind = 0;
+        console.log(v);
+        console.log($(window).scrollTop());
+        console.log("19");
       }
     }
   }
