@@ -9,12 +9,17 @@ let rx = 0;
 let ry = 0;
 let scroll_y=60000;
 let a_switch = false; //最初のスイッチ
-let a_switch2 = false;//スクロールをやめたら戻るためのスイッチ
+let a_switch2 = false; //最初のスイッチ２
+let a_switch3 = false;//スクロールをやめたら戻るためのスイッチ
 var s_time;
 var e_time;
 let scroll_stop = false;
 let down = false;
-let add = 1;
+let up = false;
+let v = 0;
+let g = 300;
+let bounce_count = 0;
+let bounce_count2 = 0;
 
 function setup() {
   createCanvas(width,height);
@@ -35,51 +40,94 @@ function draw() {
     $(function(){
       　 $(window).scrollTop(scroll_y);
       });//scroll_yの位置にスクロールバーがくる
-    scroll_y +=add;
-    add *=1.3;
+    scroll_y +=v;
+    v += g;
+    console.log(v);
     console.log($(window).scrollTop());
     if($(window).scrollTop() > 99000){
+      bounce_count ++;
       a_switch = false;
       a_switch2 = true;
-      add = 1;
+      v = -4000;
     }
   }
   if(a_switch2 == true){
-    console.log("１");
+    console.log($(window).scrollTop());
+    $(function(){
+      　 $(window).scrollTop(scroll_y);
+      });
+    scroll_y +=v;
+    v += g;
+    if($(window).scrollTop() < 78000 && bounce_count == 1){
+      bounce_count ++;
+    }
+    if($(window).scrollTop() > 99000 && bounce_count==2){
+      console.log($(window).scrollTop());
+      a_switch2 = false;
+      a_switch3 = true;
+      v = 0;
+    }
+  }
+  if(a_switch3 == true){
     if(scroll_stop == false){
-      console.log("2");
-      if(now_scroll == last_scroll){
-        console.log("３");
+      if(now_scroll == last_scroll){ // スクロールをやめたら
         s_time = new Date();
         scroll_stop = true;
       }
     }
     if(scroll_stop == true){
-      console.log("４");
       if(now_scroll == last_scroll){
-        console.log("5");
         e_time = new Date();
         if((e_time.getTime() - s_time.getTime()) > 3){
-          console.log("超えたよお");
           scroll_y = $(window).scrollTop();
-          down = true;
-          scroll_false = false;
+          if($(window).scrollTop() > 99000){
+            down = false;
+          }
+          else{
+            console.log(v);
+            down = true;
+            console.log(down);
+            scroll_stop = false;
+          }
         }
       }
       else if(now_scroll != last_scroll){
-        console.log("6");
         scroll_stop = false;
       }
     }
+
     if(down == true){
+      v += g;
+      scroll_y += v;
       $(function(){
         　 $(window).scrollTop(scroll_y);
         });//scroll_yの位置にスクロールバーがくる
-      scroll_y += add;
-      add *=1.3;
+      console.log(v);
+      console.log($(window).scrollTop());
       if($(window).scrollTop() > 99000){
-        add = 1;
+        bounce_count2 ++;
+        v = -2000;
         down = false;
+        up = true;
+        console.log(v);
+        console.log($(window).scrollTop());
+      }
+    }
+    if(up == true){
+      console.log($(window).scrollTop());
+      $(function(){
+        　 $(window).scrollTop(scroll_y);
+        });
+      scroll_y +=v;
+      v += g;
+      if($(window).scrollTop() < 95900 && bounce_count2 == 1){
+        bounce_count2 ++;
+      }
+      if($(window).scrollTop() > 99000 && bounce_count2==2){
+        console.log($(window).scrollTop());
+        up = false;
+        v = 0;
+        bounce_count2 = 0;
       }
     }
   }
@@ -108,23 +156,3 @@ function draw() {
   triangle(-130, 300, 130, 300, 0, 250);
   last_scroll = now_scroll;
 }
-
-// window.addEventListener('load', (event) => {
-//   window.addEventListener('scroll', (event) => {
-//     if(now_scroll > last_scroll){
-//       console.log('力を上に加えている');
-//       console.log(a);
-//       //a-=(now_scroll - last_scroll)*0.001;
-      
-//     }
-//     else if(now_scroll < last_scroll){
-//       console.log('力を下に加えている');
-//       console.log(a);
-//       //a+=(last_scroll - now_scroll)*0.001;
-//     }
-//     else{
-//       console.log('力は加えられていない');
-//     }
-//   });
-// });
-
