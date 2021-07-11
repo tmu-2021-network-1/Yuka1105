@@ -23,7 +23,11 @@ let bounce_count2 = 0;
 let bounce_kind = 0;
 let bounce_low = -4500;
 let bounce_high = -5500;
+let img;
 
+function preload() {
+  img = loadImage("mybag.png");
+}
 function setup() {
   createCanvas(width,height);
   frameRate(30);
@@ -208,11 +212,7 @@ function draw() {
   line(lx,ly,lx-50,ly+130);
   line(rx,ry,rx+50,ry+130);
   line(rx,ry,rx-50,ry+130);
-  fill(200,100,100);
-  ellipse(lx,ly+120,60,60);
-  fill(250,200,200);
-  noStroke();
-  ellipse(lx-10,ly+110,15,15);
+  image(img,lx-53,ly+38, img.width / 6.5, img.height / 6.5);
   stroke(120,80,80);
   strokeWeight(10);
   strokeJoin(ROUND);
