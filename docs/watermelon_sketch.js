@@ -22,7 +22,7 @@ let bounce_count = 0;
 let bounce_count2 = 0;
 let bounce_kind = 0;
 let bounce_low = -3000;
-let bounce_high = -6000;
+let bounce_high = -4500;
 
 function setup() {
   createCanvas(width,height);
@@ -114,7 +114,7 @@ function draw() {
         console.log(v);
         console.log($(window).scrollTop());
         console.log("10");
-        if((e_time.getTime() - s_time.getTime()) > 3){
+        if((e_time.getTime() - s_time.getTime()) > 5){
           scroll_y = $(window).scrollTop();
           console.log(v);
           console.log($(window).scrollTop());
@@ -194,15 +194,15 @@ function draw() {
       }
     }
   }
-  background(70, 202, 255);
+  background(82, 179, 217);
   translate(width/2,height/2-50);
   stroke(120,80,80);
   strokeWeight(10);
   strokeJoin(ROUND);
-  rx = 150*Math.cos(a * (Math.PI / 180)); //角度aをラジアンに直している
-  ry = 150*Math.sin(a * (Math.PI / 180));
-  lx = 150*Math.cos(a * (Math.PI / 180)+PI);
-  ly = 150*Math.sin(a * (Math.PI / 180)+PI);
+  rx = 140*Math.cos(a * (Math.PI / 180)); //角度aをラジアンに直している
+  ry = 140*Math.sin(a * (Math.PI / 180));
+  lx = 140*Math.cos(a * (Math.PI / 180)+PI);
+  ly = 140*Math.sin(a * (Math.PI / 180)+PI);
   line(lx,ly,rx,ry);
   line(lx,ly,lx+50,ly+130);
   line(lx,ly,lx-50,ly+130);
@@ -210,15 +210,26 @@ function draw() {
   line(rx,ry,rx-50,ry+130);
   fill(200,100,100);
   ellipse(lx,ly+120,60,60);
+  fill(250,200,200);
+  noStroke();
+  ellipse(lx-10,ly+110,15,15);
+  stroke(120,80,80);
+  strokeWeight(10);
+  strokeJoin(ROUND);
   fill(140,100,60);
   arc(lx,ly+130, 100,50, 0, PI);
   arc(rx,ry+130, 100,50, 0, PI);
   line(0,-50,0,250);
   fill(140,100,60);
-  ellipse(0,-50,30,30);
+  ellipse(0,-50,20,20);
   triangle(-130, 300, 130, 300, 0, 250);
   noFill();
-  stroke(50);
-  arc(rx,ry+150, 20, 70, 1, 5);
+  strokeWeight(3);
+  stroke(243,200,200);
+  arc(rx,ry+146, 20, 39, 1.15, 5);
+  arc(rx+5,ry+146, 20, 39, 1.15, 5);
+  arc(rx+10,ry+146, 20, 39, 1.05, 5);
+  line(rx+17,ry+130+30,rx,height);
+  line(rx-9.5,ry+130+10,rx,height);
   last_scroll = now_scroll;
 }

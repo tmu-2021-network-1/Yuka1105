@@ -7,7 +7,7 @@ let lx = 0;
 let ly = 0;
 let rx = 0;
 let ry = 0;
-let scroll_y=60000;
+let scroll_y=100000;
 let a_switch = false; //最初のスイッチ
 let a_switch2 = false; //最初のスイッチ２
 let a_switch3 = false;//スクロールをやめたら戻るためのスイッチ
@@ -17,12 +17,12 @@ let scroll_stop = false;
 let down = false;
 let up = false;
 let v = 0;
-let g = 300;
+let g = 600;
 let bounce_count = 0;
 let bounce_count2 = 0;
 let bounce_kind = 0;
-let bounce_low = -3000;
-let bounce_high = -6000;
+let bounce_low = -4500;
+let bounce_high = -5500;
 
 function setup() {
   createCanvas(width,height);
@@ -45,7 +45,7 @@ window.onload = function() {
 function draw() {
   console.log(bounce_kind);
   now_scroll = $(window).scrollTop();
-  a = -$(window).scrollTop() * 0.001 + 60; //初期角度0
+  a = -$(window).scrollTop() * 0.0005 + 40; //初期角度0
   console.log(v);
   console.log($(window).scrollTop());
   console.log("3");
@@ -58,11 +58,11 @@ function draw() {
     console.log(v);
     console.log($(window).scrollTop());
     console.log("4");
-    if($(window).scrollTop() > 99000){
+    if($(window).scrollTop() > 149000){
       bounce_count ++;
       a_switch = false;
       a_switch2 = true;
-      v = -4000;
+      v = -7000;
       console.log(v);
       console.log($(window).scrollTop());
       console.log("5");
@@ -77,13 +77,13 @@ function draw() {
       });
     scroll_y +=v;
     v += g;
-    if($(window).scrollTop() < 78000 && bounce_count == 1){
+    if($(window).scrollTop() < 128000 && bounce_count == 1){
       bounce_count ++;
       console.log(v);
       console.log($(window).scrollTop());
       console.log("7");
     }
-    if($(window).scrollTop() > 99000 && bounce_count==2){
+    if($(window).scrollTop() > 149000 && bounce_count==2){
       a_switch2 = false;
       a_switch3 = true;
       v = 0;
@@ -114,12 +114,12 @@ function draw() {
         console.log(v);
         console.log($(window).scrollTop());
         console.log("10");
-        if((e_time.getTime() - s_time.getTime()) > 3){
+        if((e_time.getTime() - s_time.getTime()) > 5){
           scroll_y = $(window).scrollTop();
           console.log(v);
           console.log($(window).scrollTop());
           console.log("11");
-          if($(window).scrollTop() > 99000){
+          if($(window).scrollTop() > 149000){
             down = false;
             console.log(v);
             console.log($(window).scrollTop());
@@ -152,7 +152,7 @@ function draw() {
         console.log($(window).scrollTop());
         console.log(scroll_y);
         console.log("ダウンしてる時");
-      if($(window).scrollTop() > 99000){
+      if($(window).scrollTop() > 149000){
         bounce_count2 ++;
         if(bounce_kind == 0){
           v = bounce_low;
@@ -177,13 +177,13 @@ function draw() {
       console.log($(window).scrollTop());
       console.log(scroll_y);
       console.log("17");
-      if($(window).scrollTop() < 95900 && bounce_count2 == 1){
+      if($(window).scrollTop() < 145900 && bounce_count2 == 1){
         bounce_count2 ++;
         console.log(v);
         console.log($(window).scrollTop());
         console.log("18");
       }
-      if($(window).scrollTop() > 99000 && bounce_count2==2){
+      if($(window).scrollTop() > 149000 && bounce_count2==2){
         up = false;
         v = 0;
         bounce_count2 = 0;
