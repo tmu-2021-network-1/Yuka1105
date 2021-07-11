@@ -45,7 +45,16 @@ window.onload = function() {
   console.log($(window).scrollTop());
   console.log("2");
 };
-
+$(function(){
+  $('.js-modal-open').on('click',function(){
+      $('.js-modal').fadeIn();
+      return false;
+  });
+  $('.js-modal-close').on('click',function(){
+      $('.js-modal').fadeOut();
+      return false;
+  });
+});
 function draw() {
   console.log(bounce_kind);
   now_scroll = $(window).scrollTop();
