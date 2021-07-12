@@ -58,7 +58,7 @@ $(function(){
 function draw() {
   console.log(bounce_kind);
   now_scroll = $(window).scrollTop();
-  a = -$(window).scrollTop() * 0.001 + 60; //初期角度0
+  a = -$(window).scrollTop() * 0.0013 + 55; //初期角度0
   console.log(v);
   console.log($(window).scrollTop());
   console.log("3");
@@ -71,7 +71,7 @@ function draw() {
     console.log(v);
     console.log($(window).scrollTop());
     console.log("4");
-    if($(window).scrollTop() > 99000){
+    if($(window).scrollTop() > 74000){
       bounce_count ++;
       a_switch = false;
       a_switch2 = true;
@@ -90,13 +90,13 @@ function draw() {
       });
     scroll_y +=v;
     v += g;
-    if($(window).scrollTop() < 78000 && bounce_count == 1){
+    if($(window).scrollTop() < 53000 && bounce_count == 1){
       bounce_count ++;
       console.log(v);
       console.log($(window).scrollTop());
       console.log("7");
     }
-    if($(window).scrollTop() > 99000 && bounce_count==2){
+    if($(window).scrollTop() > 74000 && bounce_count==2){
       a_switch2 = false;
       a_switch3 = true;
       v = 0;
@@ -132,7 +132,7 @@ function draw() {
           console.log(v);
           console.log($(window).scrollTop());
           console.log("11");
-          if($(window).scrollTop() > 99000){
+          if($(window).scrollTop() > 74000){
             down = false;
             console.log(v);
             console.log($(window).scrollTop());
@@ -165,7 +165,7 @@ function draw() {
         console.log($(window).scrollTop());
         console.log(scroll_y);
         console.log("ダウンしてる時");
-      if($(window).scrollTop() > 99000){
+      if($(window).scrollTop() > 74000){
         bounce_count2 ++;
         if(bounce_kind == 0){
           v = bounce_low;
@@ -190,13 +190,13 @@ function draw() {
       console.log($(window).scrollTop());
       console.log(scroll_y);
       console.log("17");
-      if($(window).scrollTop() < 95900 && bounce_count2 == 1){
+      if($(window).scrollTop() < 70900 && bounce_count2 == 1){
         bounce_count2 ++;
         console.log(v);
         console.log($(window).scrollTop());
         console.log("18");
       }
-      if($(window).scrollTop() > 99000 && bounce_count2==2){
+      if($(window).scrollTop() > 74000 && bounce_count2==2){
         up = false;
         v = 0;
         bounce_count2 = 0;

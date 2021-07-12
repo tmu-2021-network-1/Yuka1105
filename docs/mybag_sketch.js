@@ -58,7 +58,7 @@ $(function(){
 function draw() {
   console.log(bounce_kind);
   now_scroll = $(window).scrollTop();
-  a = -$(window).scrollTop() * 0.0005 + 40; //初期角度0
+  a = -$(window).scrollTop() * 0.0005 + 30; //初期角度0
   console.log(v);
   console.log($(window).scrollTop());
   console.log("3");
