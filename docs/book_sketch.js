@@ -21,7 +21,7 @@ let g = 100;
 let bounce_count = 0;
 let bounce_count2 = 0;
 let bounce_kind = 0;
-let bounce_low = -1000;
+let bounce_low = -1200;
 let bounce_high = -1500;
 let img;
 
@@ -128,7 +128,7 @@ function draw() {
         console.log(v);
         console.log($(window).scrollTop());
         console.log("10");
-        if((e_time.getTime() - s_time.getTime()) > 5){
+        if((e_time.getTime() - s_time.getTime()) > 3){
           scroll_y = $(window).scrollTop();
           console.log(v);
           console.log($(window).scrollTop());

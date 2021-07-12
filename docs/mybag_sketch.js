@@ -127,7 +127,7 @@ function draw() {
         console.log(v);
         console.log($(window).scrollTop());
         console.log("10");
-        if((e_time.getTime() - s_time.getTime()) > 5){
+        if((e_time.getTime() - s_time.getTime()) > 3){
           scroll_y = $(window).scrollTop();
           console.log(v);
           console.log($(window).scrollTop());

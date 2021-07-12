@@ -22,7 +22,7 @@ let bounce_count = 0;
 let bounce_count2 = 0;
 let bounce_kind = 0;
 let bounce_low = -3000;
-let bounce_high = -4500;
+let bounce_high = -4000;
 let img;
 
 function preload() {
@@ -75,7 +75,7 @@ function draw() {
       bounce_count ++;
       a_switch = false;
       a_switch2 = true;
-      v = -4000;
+      v = -3500;
       console.log(v);
       console.log($(window).scrollTop());
       console.log("5");
@@ -90,7 +90,7 @@ function draw() {
       });
     scroll_y +=v;
     v += g;
-    if($(window).scrollTop() < 53000 && bounce_count == 1){
+    if($(window).scrollTop() < 58000 && bounce_count == 1){
       bounce_count ++;
       console.log(v);
       console.log($(window).scrollTop());
@@ -127,7 +127,7 @@ function draw() {
         console.log(v);
         console.log($(window).scrollTop());
         console.log("10");
-        if((e_time.getTime() - s_time.getTime()) > 5){
+        if((e_time.getTime() - s_time.getTime()) > 3){
           scroll_y = $(window).scrollTop();
           console.log(v);
           console.log($(window).scrollTop());
