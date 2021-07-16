@@ -8,41 +8,20 @@
         <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@500&display=swap" rel="stylesheet">
         <meta charset="utf-8">
         <title>おもい？かるい？</title>
-        <script src="p5.js"></script>
-        <script
-        src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
     </head>
 
-    <body id = "book">
-        <h1>おもい？かるい？</h1>
-        <div class="content">
-            <a class="js-modal-open" href="">このサイトについて</a>
+    <body id = "pre">
+        <div class= "hajimeni_wrapper">
+            <h2>おもい？かるい？</h2>
+            <p class = "title">はじめに</p>
+            <p class = "hajimeni">「スクロール」によってwebサイトでは普通味わえない「重さ」を体感してもらうサイトです。
+            </p>
+            <img src = "tool.png" alt = "スクロールツールの推奨・非推奨を表す画像">
+            <br>
+            <div class="start">
+                <a href="book.html">はじめる</a>
+            </div>
         </div>
-        <div class="modal js-modal">
-            <div class="modal__bg js-modal-close"></div>
-            <div class="modal__content">
-                <p class = "modal_title">このサイトについて</p>
-                <p class = "modal_sentences">Webサイトでは本来体験できない「（物理的な意味での）重さ」という概念をweb特有のUIである「スクロール」を用いて体験させる実験的なサイトです。
-                    スクロールした際に「重さを感じる！」と思ってもらえたらこのサイトの目標は達成です。
-                    主にトラックパッドを用いて上から下に素早く連続的にスクロールをし、紐を擬似的に引っ張り天秤に下向きの力を加えます。
-                    その際左側の皿に乗っている物体の種類によって天秤の動きが異なります。
-                    これによって３種類の物体（読みかけの文庫本、冷蔵庫にあったスイカ、私の通学カバン）の重さの違いを味わっていただけたら幸いです。
-                </p>
-                <p class = "modal_sentences">
-                    （注：MacBookのトラックパッドでのスクロールを推奨します。）
-                </p>
-                <p><small>&copy;2021 Yuka Komeda</small></p>
-                <a class="close_botton js-modal-close" href="">閉じる</a>
-            </div><!--modal__inner-->
-        </div><!--modal-->
-        <ul id="nav">
-            <li id = "menu1"> <a href="index.html">読みかけの文庫本</a></li>
-            <li id = "menu2"> <a href="watermelon.html">冷蔵庫にあったスイカ</a></li>
-            <li id = "menu3"> <a href="mybag.html">私の通学カバン</a></li>
-        </ul>
-        <script src="book_sketch.js"></script>
     </body>
 
 </html>

@@ -1,3 +1,10 @@
+#pre{
+    margin:0;
+    background-color: rgb(82, 179, 217);
+    overscroll-behavior:none;
+    font-family: 'Kiwi Maru', serif;
+    color:#fff;
+}
 #book{
     margin:0;
     background-color: rgb(82, 179, 217);
@@ -15,6 +22,55 @@
     background-color: rgb(82, 179, 217);
     overscroll-behavior:none;
     height: 150000px;
+}
+.hajimeni_wrapper{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+}
+h2{
+    font-size: 70px;
+    text-align: center;
+    width: 100%;
+    margin: 70px 0 0 0;
+    padding: 0;
+}
+#pre .title{
+    font-size: 30px;
+    text-align: center;
+    width: 100%;
+    margin: 10px 0px;
+}
+.hajimeni{
+    font-size: 17px;
+    letter-spacing: 0.05em;
+    margin: 10px 0px;
+}
+#pre img{
+    display: inline-block;
+    width:45%;
+    height:100%;
+}
+.start{
+    display: inline-block;
+    text-align: center;
+    padding: 15px  20px;
+    background-color: #fff;
+    border-radius: 30px;
+    font-family: 'Kiwi Maru', serif;
+    font-size: 17px;
+}
+.start a{
+    text-decoration: none;
+    color:rgb(75, 75, 75);
+    letter-spacing: 0.1em;
+}
+.start:hover{
+    background-color:rgb(255, 201, 184);
+}
+.start a:visited{
+    text-decoration: none;
+    color:rgb(75, 75, 75);
 }
 .content{
     text-align: center;
