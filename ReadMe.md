@@ -2,7 +2,7 @@
 ## 詳しくはこちらのリンクへ
 デモ動画：https://youtu.be/hj4uSb272Ws
 
-ポートフォリオ：https://drive.google.com/file/d/1VVpZ2tZ0PsZN9uakEsjICSmzWkwSvHdM/view
+ポートフォリオ：準備中
 
 ## コンセプト・想定ユーザ
 Webサイトでは本来体験できない「（物理的な意味での）重さ」という概念をweb特有のUIである「スクロール」を用いて体験させる実験的なサイトを制作しました。
